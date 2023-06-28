@@ -54,13 +54,3 @@ class MongoDbLibrary():
         self.connection.close()
         print("Connection closed.")
 
-
-# Debug
-a = MongoDbLibrary()
-a.connect_to_mongodb(
-    "mongodb://carlsberg:carlsberg@localhost:27017/cx-order-service?readPreference=primary&ssl=false&authsource=admin")
-b = a.execute_mongodb_query("cx-order-service", "order",
-                            {"orderNumber": "120000000"})
-
-print(b)
-a.diconnect_from_mongodb()
